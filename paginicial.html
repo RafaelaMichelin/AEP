@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="photo.png" />
+    <title>Chiot Finance - Página incial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+     
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+}
+
+
+                    /* Começo do cabeçalho */
+    .header {
+      position: fixed;
+      display: flex;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 2px 100px;
+      background-color: rgb(17, 68, 64);
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+  
+  }
+  
+  .logo {
+      width: 45px;
+      position: absolute;
+      left: 0;
+      margin-left: 2vw;
+      margin-bottom: 1vw;
+  
+  }
+  
+  .title1 {
+      color: #f5f4f4;
+      font-family: sans-serif;
+      font-size: 30px;
+      margin-top: 1vw;
+      text-decoration: none;
+      letter-spacing: 2px;
+  
+  }
+  
+  .navbar a {
+      color: #fdfdfc;
+      font-family: sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      text-decoration: none;
+      margin-right: 8vw;
+      margin-top: 1vw;
+  
+  }
+  
+  /* Fim do cabeçalho */
+
+
+/*comeco do corpo principal*/
+
+.banner {
+  background: url('banner.jpg') no-repeat center center/cover;
+  height: 400px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner-content {
+  max-width: 600px;
+  color: black;
+}
+
+.banner h2 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.banner p {
+  font-size: 1.5em;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #f00;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cta-button:hover {
+  background-color: #c00;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+}
+
+.about, .services, .testimonials, .blog {
+  background-color: #f9f9f9;
+}
+
+.about-container, .services-container, .testimonials-container, .blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.service, .testimonial, .blog-post {
+  margin-bottom: 20px;
+}
+
+/*fim do corpo principal*/
+
+/*começo do rodapé*/
+
+footer {
+  background-color: rgb(17, 68, 64);
+  color: #fff;
+  padding: 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+  text-decoration: underline;
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section input[type="email"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.footer-section button {
+  padding: 10px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-section button:hover {
+  background-color: #777;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(17, 68, 64);
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+
+/*fim do rodapé*/
+
+</style>
+
+<title>Chiot Finance</title>
+    
+</head>
+
+<body>
+
+  
+<!-- Cabeçalho -->
+<header class="header">
+  <img src="photo.png" alt="logo" class="logo" >
+  <h1 class="title1">Chiot Finance</h1>
+  <nav class="navbar">
+    <a href="sobrenos.html">SOBRE NÓS</a>
+    <a href="sobreprojeto.html">SOBRE O PROJETO</a>
+    <a href="controlefinanceiro.html">CONTROLE FINANCEIRO</a>
+  </nav>
+</header> 
+    <!-- Fim do cabeçalho -->
+    
+    <!-- Comeco do corpo principal -->
+    <main>
+      <section id="home" class="banner">
+          <div class="banner-content">
+              <h2>Bem-vindo à Chiot Finance</h2>
+              <p>As finanças da sua empresa sob controle.</p>
+              <a href="#services" class="cta-button">Saiba Mais</a>
+          </div>
+      </section>
+      
+      <section id="about" class="about">
+          <div class="about-container">
+              <h2>Sobre Nós</h2>
+              <p>A Chiot Finance é uma empresa dedicada a ajudar você a gerenciar as finanças da sua empresa de forma eficaz e eficiente. Com nossas ferramentas e serviços, você terá o controle total sobre seus lucros e despesas.</p>
+          </div>
+      </section>
+      
+      <section id="services" class="services">
+          <div class="services-container">
+              <h2>Nossos Serviços</h2>
+              <div class="service">
+                  <h3>Planejamento Financeiro</h3>
+                  <p>Elabore um plano financeiro personalizado para alcançar seus objetivos.</p>
+              </div>
+              <div class="service">
+                  <h3>Gestão de Investimentos</h3>
+                  <p>Maximize seus investimentos com a nossa orientação especializada.</p>
+              </div>
+              <div class="service">
+                  <h3>Educação Financeira Empresarial</h3>
+                  <p>Aprimore seus conhecimentos com nossos recursos educativos.</p>
+              </div>
+          </div>
+      </section>
+      
+      <section id="testimonials" class="testimonials">
+          <div class="testimonials-container">
+              <h2>Depoimentos</h2>
+              <div class="testimonial">
+                  <p>"A Chiot Finance transformou a forma como gerencio meu negócio. Recomendo a todos!" - João Silva</p>
+              </div>
+              <div class="testimonial">
+                  <p>"Graças à Chiot Finance, consegui investir de forma inteligente e segura." - Maria Oliveira</p>
+              </div>
+          </div>
+      </section>
+      
+      <section id="blog" class="blog">
+          <div class="blog-container">
+              <h2>Nosso Blog</h2>
+              <article class="blog-post">
+                  <h3>5 Dicas para economizar dinheiro na sua empresa</h3>
+                  <p>Aprenda como economizar dinheiro com estas dicas simples e eficazes.</p>
+                  <a href="5dicasparaeconomizar.html">Leia mais</a>
+              </article>
+              <article class="blog-post">
+                  <h3>Investimentos para Iniciantes</h3>
+                  <p>Descubra como começar a investir com segurança e confiança.</p>
+                  <a href="investimentosparainiciantes.html">Leia mais</a>
+              </article>
+          </div>
+
+          
+          
+
+      </section>
+  </main>
+<!-- Fim do corpo principal -->
+
+
+    
+<!-- Começo do rodapé -->
+ <footer>
+
+  <div class="footer-container">
+      <div class="footer-section">
+          <h3>Chiot Finance</h3>
+          <p>Fornecendo soluções de controle financeiro para ajudar você a gerenciar melhor suas finanças pessoais.</p>
+      </div>
+      <div class="footer-section">
+          <h3>Contato</h3>
+          <p>Email: contato@chiotfinance.com</p>
+          <p>Telefone: (11) 1234-5678</p>
+          <p>Endereço: Rua das Finanças, 123, São Paulo, SP</p>
+      </div>
+      <div class="footer-section">
+          <h3>Links Úteis</h3>
+          <ul>
+              <li><a href="sobrenos.html">Sobre Nós</a></li>
+              <li><a href="contato.html">Contato</a></li>
+              <li><a href="politicadeprivacidade.html">Política de Privacidade</a></li>
+              <li><a href="termos.html">Termos de Uso</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h3>Redes Sociais</h3>
+          <div class="social-links">
+              <a href="https://facebook.com/chiotfinance" target="_blank">Facebook</a>
+              <a href="https://twitter.com/chiotfinance" target="_blank">Twitter</a>
+              <a href="https://linkedin.com/company/chiotfinance" target="_blank">LinkedIn</a>
+              <a href="https://instagram.com/chiotfinance" target="_blank">Instagram</a>
+          </div>
+      </div>
+      <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p>Assine nossa newsletter para receber as últimas novidades.</p>
+          <form action="/newsletter" method="post">
+              <input type="email" name="email" placeholder="Seu email" required>
+              <button type="submit">Assinar</button>
+          </form>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2024 Chiot Finance. Todos os direitos reservados.</p>
+  </div>
+
+</footer>
+<!-- Fim do rodapé -->
+
+ 
+
+</body>
+
+
+</html>

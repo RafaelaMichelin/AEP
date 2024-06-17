@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="photo.png" />
+    <title>Chiot Finance - Controle financeiro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="image/png" href="Pictogrammers-Material-Finance.512.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        #site-name {
+            color: #ffffff;
+            margin: 0;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin-top: 100px;
+        }
+
+        .chart-container {
+            width: 60%;
+            margin-right: 20px;
+        }
+
+        .side-panels {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .top-months, .info-panel {
+            margin-right: -200px;
+            width: 90%;
+            background-color: rgb(17, 68, 64);
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .top-months h2, .info-panel h2 {
+            margin-top: 0;
+            writing-mode: horizontal-tb;
+            
+        }
+
+        .info-row {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .info-row label {
+            display: inline-block;
+            width: 80px;
+            font-weight: bold;
+        }
+
+        .info-row input {
+            width: calc(100% - 90px);
+        }
+
+        .top-months table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .top-months th, .top-months td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .top-months th {
+            background-color: #f2f2f2;
+        }
+
+        .top-months tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .top-months tr:hover {
+            background-color: #ddd;
+        }
+
+        .top-months p {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+               /* Começo do cabeçalho */
+               .header {
+                position: fixed;
+                display: flex;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 2px 100px;
+                background-color: rgb(17, 68, 64);
+                justify-content: space-between;
+                align-items: center;
+                z-index: 1000;
+            
+            }
+            
+            .logo {
+                width: 45px;
+                position: absolute;
+                left: 0;
+                margin-left: 2vw;
+                margin-bottom: 1vw;
+            
+            }
+            
+            .title1 {
+                color: #f5f4f4;
+                font-family: sans-serif;
+                font-size: 30px;
+                margin-top: 1vw;
+                text-decoration: none;
+                letter-spacing: 2px;
+            
+            }
+            
+            .navbar a {
+                color: #fdfdfc;
+                font-family: sans-serif;
+                font-size: 17px;
+                font-weight: 500;
+                text-decoration: none;
+                margin-right: 8vw;
+                margin-top: 1vw;
+            
+            }
+            
+            /* Fim do cabeçalho */
+
+/*começo do rodapé*/
+
+footer {
+    background-color: rgb(17, 68, 64);
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-section ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-section form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-section input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .footer-section button {
+    padding: 10px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .footer-section button:hover {
+    background-color: #777;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(17, 68, 64);
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+  }
+  
+  
+  /*fim do rodapé*/
+</style>
+
+</head>
+<body>
+    <header class="header">
+        <img src="photo2.png" alt="logo" class="logo">
+        <h1 class="title1">Chiot Finance</h1>
+        <nav class="navbar">
+
+            <a href="paginicial.html">PÁGINA INICIAL</a>
+
+            <a href="sobreprojeto.html">SOBRE O PROJETO</a>
+
+            <a href="sobrenos.html">SOBRE NÓS</a>
+
+        </nav>
+    </header>
+    
+    <main>
+        <div class="chart-container">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="side-panels">
+            <div class="top-months">
+                <h2>Mês mais Lucrativo</h2>
+                <p id="mes-lucrativo">Nenhum mês selecionado</p>
+                <p id="message">O mês mais lucrativo foi <span id="mes-lucrativo-text"></span> tendo o maior valor de lucros no ano.</p>
+            </div>
+            <div class="info-panel">
+                <h2>Adicionar Informações</h2>
+                <div class="info-row">
+                    <label for="data">Data:</label>
+                    <input type="text" id="data">
+                </div>
+                <div class="info-row">
+                    <label for="lucros">Lucros:</label>
+                    <input type="text" id="lucros">
+                </div>
+                <div class="info-row">
+                    <label for="despesas">Despesas:</label>
+                    <input type="text" id="despesas">
+                </div>
+                <button onclick="addInfo()">Adicionar</button>
+                <button onclick="clearChart()">Limpar Gráfico</button>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Rodapé -->
+ <footer>
+
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Chiot Finance</h3>
+            <p>Fornecendo soluções de controle financeiro para ajudar você a gerenciar melhor suas finanças pessoais.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <p>Email: contato@chiotfinance.com</p>
+            <p>Telefone: (11) 1234-5678</p>
+            <p>Endereço: Rua das Finanças, 123, São Paulo, SP</p>
+        </div>
+        <div class="footer-section">
+            <h3>Links Úteis</h3>
+            <ul>
+                <li><a href="sobrenos.html">Sobre Nós</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="politicadeprivacidade.html">Política de Privacidade</a></li>
+                <li><a href="termos.html">Termos de Uso</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Redes Sociais</h3>
+            <div class="social-links">
+                <a href="https://facebook.com/chiotfinance" target="_blank">Facebook</a>
+                <a href="https://twitter.com/chiotfinance" target="_blank">Twitter</a>
+                <a href="https://linkedin.com/company/chiotfinance" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com/chiotfinance" target="_blank">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p>Assine nossa newsletter para receber as últimas novidades.</p>
+            <form action="/newsletter" method="post">
+                <input type="email" name="email" placeholder="Seu email" required>
+                <button type="submit">Assinar</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Chiot Finance. Todos os direitos reservados.</p>
+    </div>
+  
+  </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+            var lucros = [5000, 6000, 5500, 6500, 7000, 8000, 7500, 8500, 9000, 9500, 10000, 10500];
+            var despesas = [3000, 3500, 3200, 3800, 4000, 4200, 3900, 4300, 4500, 4700, 4800, 4900];
+            var myChart;
+
+            function updateChart() {
+                var ctx = document.getElementById('myChart').getContext('2d');
+                myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: months,
+                        datasets: [{
+                            label: 'Lucros',
+                            data: lucros,
+                            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        }, {
+                            label: 'Despesas',
+                            data: despesas,
+                            backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            }
+
+            updateChart();
+
+            document.getElementById("myChart").onclick = function(evt){
+                var activePoint = myChart.getElementsAtEventForMode(evt, 'nearest', {intersect: true}, 'x')[0];
+                var monthIndex = activePoint ? activePoint.index : null;
+                if (monthIndex !== null) {
+                    document.getElementById("data").value = months[monthIndex];
+                    document.getElementById("lucros").value = lucros[monthIndex];
+                    document.getElementById("despesas").value = despesas[monthIndex];
+                    document.getElementById("mes-lucrativo").textContent = months[monthIndex];
+                    document.getElementById("mes-lucrativo-text").textContent = months[monthIndex];
+                }
+            };
+
+            var maxLucroIndex = lucros.indexOf(Math.max(...lucros));
+            var mesLucrativo = months[maxLucroIndex];
+            document.getElementById("mes-lucrativo").textContent = mesLucrativo;
+            document.getElementById("mes-lucrativo-text").textContent = mesLucrativo;
+            document.getElementById("message").textContent = "O mês mais lucrativo foi " + mesLucrativo + " tendo o maior valor de lucros no ano.";
+
+            window.addInfo = function() {
+                var data = document.getElementById("data").value;
+                var lucro = parseFloat(document.getElementById("lucros").value);
+                var despesa = parseFloat(document.getElementById("despesas").value);
+
+                if (data && !isNaN(lucro) && !isNaN(despesa)) {
+                    months.push(data);
+                    lucros.push(lucro);
+                    despesas.push(despesa);
+
+                    myChart.data.labels = months;
+                    myChart.data.datasets[0].data = lucros;
+                    myChart.data.datasets[1].data = despesas;
+                    myChart.update();
+                }
+            };
+
+            window.clearChart = function() {
+                months = [];
+                lucros = [];
+                despesas = [];
+                myChart.data.labels = months;
+                myChart.data.datasets[0].data = lucros;
+                myChart.data.datasets[1].data = despesas;
+                myChart.update();
+                document.getElementById("data").value = '';
+                document.getElementById("lucros").value = '';
+                document.getElementById("despesas").value = '';
+                document.getElementById("mes-lucrativo").textContent = 'Nenhum mês selecionado';
+                document.getElementById("mes-lucrativo-text").textContent = '';
+                document.getElementById("message").textContent = 'O mês mais lucrativo foi <span id="mes-lucrativo-text"></span> tendo o maior valor de lucros no ano.';
+            };
+        });
+    </script>
+</body>
+</html>
